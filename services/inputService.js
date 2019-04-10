@@ -1,4 +1,5 @@
 const Input = require('../models/Input')
+const findPrime = require('../helpers/findPrime')
 
 function inputService() {
 
@@ -12,10 +13,14 @@ function inputService() {
         }
     }
 
-    async function saveNewInput(title, content) {
+    async function saveNewInput(newInput) {
         try {
-            let newInput = await Input({ title, content }).save({ title, content })
-            return getInputHistory()
+            
+            const primeNumber = findPrime(newInput)
+            console.log('>>>>>>>>>>>>>', primeNumber)
+
+            //let newInput = await Input({ title, content }).save({ title, content })
+            //return getInputHistory()
         }
         catch (err) {
           throw err;

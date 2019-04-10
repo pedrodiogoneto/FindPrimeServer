@@ -1,28 +1,20 @@
-const list = require('listOfNumbers')
+const list = require('./listOfNumbers')
 
-module.exports = function findPrime() {
+module.exports = function findPrime(numberToFind) {
 
-    function findPrime() {
-        let numberToFind = '196'
+    let numberToFindArray = numberToFind.split('')
 
-        let numberToFindArray = numberToFind.split('')
+    return list.find(number => {
+        if( number.length < 3 ) return
 
-        return list.find(number => {
-            if( number.length < 3 ) return
+        const numberString = number.toString()
 
-            const numberString = number.toString()
-
-            if(numberString.includes(numberToFindArray[0])) {
-                if(numberString.includes(numberToFindArray[1]) && numberString.indexOf(numberToFindArray[1]) > numberString.indexOf(numberToFindArray[0])) {
-                    if(numberString.includes(numberToFindArray[2]) && numberString.indexOf(numberToFindArray[2]) > numberString.indexOf(numberToFindArray[1])) {
-                        return numberString
-                    }
+        if(numberString.includes(numberToFindArray[0])) {
+            if(numberString.includes(numberToFindArray[1]) && numberString.indexOf(numberToFindArray[1]) > numberString.indexOf(numberToFindArray[0])) {
+                if(numberString.includes(numberToFindArray[2]) && numberString.indexOf(numberToFindArray[2]) > numberString.indexOf(numberToFindArray[1])) {
+                    return numberString
                 }
             }
-        })
-    }
-
-    return {
-        findPrime
-    }
+        }
+    })
 }

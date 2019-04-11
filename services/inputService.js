@@ -5,8 +5,8 @@ function inputService() {
 
     async function getInputHistory() {
         try {
-            let inputList = await Input.find({ })
-            return inputList
+            const inputList = await Input.find({ })
+            return inputList.sort((a,b) => b.date - a.date) 
         }
         catch (err) {
           throw err;

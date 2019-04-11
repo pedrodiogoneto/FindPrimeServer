@@ -10,7 +10,7 @@ function inputController() {
             let inputHistory = await inputService.getInputHistory()
             return res.status(200).json(inputHistory)
         } catch (error) {
-            Error('There was an error receiving the Note List')
+            return res.status(500).json({ error: error.message })
         } 
     }
 
@@ -20,8 +20,8 @@ function inputController() {
             let inputHistory = await inputService.saveNewInput(newInput)
             return res.status(200).json(inputHistory)
         } catch (error) {
-            Error('There was an error Saving the New Note')
-        } 
+            return res.status(500).json({ error: error.message })
+        }
     }
 
     return {

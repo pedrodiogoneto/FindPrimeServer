@@ -19,7 +19,7 @@ function inputService() {
             const primeNumber = findPrime(newInput)
             console.log('>>>>>>>>>>>>>', primeNumber)
 
-            //let newInput = await Input({ title, content }).save({ title, content })
+            //await Input({ title, content }).save({ title, content })
             //return getInputHistory()
         }
         catch (err) {

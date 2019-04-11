@@ -31,9 +31,7 @@ module.exports = function findPrime(numberToFind) {
                     if(numberString.includes(numberToFindArray[2]) && stringWithoutSecond.indexOf(numberToFindArray[2]) > stringWithoutFirst.indexOf(numberToFindArray[1])) {
                         return numberString.join('')
                     }
-
                 }
-
             }
 
             if(isFirstEqualSecond || isSecondEqualThird || isFirstEqualThird) {

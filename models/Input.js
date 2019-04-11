@@ -4,8 +4,9 @@ const ObjectId = Schema.Types.ObjectId
 
 const InputSchema = Schema({
   id: ObjectId,
-  title: String,
-  content: String
+  input: String,
+  result: String,
+  date: Number
 })
 
 const Input = mongoose.model('Input', InputSchema)

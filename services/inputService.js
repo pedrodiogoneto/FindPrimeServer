@@ -15,12 +15,10 @@ function inputService() {
 
     async function saveNewInput(newInput) {
         try {
-            
             const primeNumber = findPrime(newInput)
-            console.log('>>>>>>>>>>>>>', primeNumber)
-
-            //await Input({ title, content }).save({ title, content })
-            //return getInputHistory()
+            const date = new Date()
+            await Input({ input: newInput, date, result: primeNumber }).save({ input: newInput, date, result: primeNumber })         
+            return getInputHistory()
         }
         catch (err) {
           throw err;

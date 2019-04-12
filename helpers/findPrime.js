@@ -22,13 +22,16 @@ module.exports = function findPrime(numberToFind) {
                 let stringWithoutFirst = JSON.parse(JSON.stringify(numberString))
                 stringWithoutFirst.splice(indexFirst, 1)
 
-                if(numberString.includes(numberToFindArray[1]) && (stringWithoutFirst.indexOf(numberToFindArray[1]) + 1) > numberString.indexOf(numberToFindArray[0])) {
+                if(numberString.includes(numberToFindArray[1]) 
+                    && (stringWithoutFirst.indexOf(numberToFindArray[1]) + 1) > numberString.indexOf(numberToFindArray[0])) {
                     
                     const indexSecond = numberString.indexOf(numberToFindArray[1])
                     let stringWithoutSecond = JSON.parse(JSON.stringify(stringWithoutFirst)) 
                     stringWithoutSecond.splice(indexSecond, 1)
+                    
 
-                    if(numberString.includes(numberToFindArray[2]) && stringWithoutSecond.indexOf(numberToFindArray[2]) > stringWithoutFirst.indexOf(numberToFindArray[1])) {
+                    if(numberString.includes(numberToFindArray[2]) 
+                        && (stringWithoutSecond.indexOf(numberToFindArray[2]) + 2) > (stringWithoutFirst.indexOf(numberToFindArray[1])+1)) {
                         return numberString.join('')
                     }
                 }

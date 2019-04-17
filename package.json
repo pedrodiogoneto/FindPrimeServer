@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js",
+    "start": "node bin/www",
     "start-dev": "nodemon --inspect app.js",
-    "test": "mocha"
+    "test": "mocha",
+    "dev": "nodemon --debug-brk www/bin"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
